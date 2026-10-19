@@ -1,8 +1,12 @@
-                                                                                                                                                                                                                                                 <!DOCTYPE><html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 
-  <style>  
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -22,14 +26,14 @@
     }
 
     .login-container {
-      position: relative;
-      z-index: 1;
       width: 360px;
+      max-width: 90%;
       padding: 40px;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 20px;
       backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       color: white;
     }
 
@@ -94,20 +98,34 @@
 <body>
 
   <div class="login-container">
-    <h2>log in</h2>
+    <h2>Log In</h2>
 
-    <form action="loginform.html" method="get">
-        <label>Username:</label>
-        <input type="text" name="username" required>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+          required
+        >
+      </div>
 
-        <br><br>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        >
+      </div>
 
-        <label>Password:</label>
-        <input type="password" name="password" required>
+      <button type="submit">Log In</button>
 
-        <br><br>
-
-        <button type="submit">Log In</button>
+      <p id="message" role="status" aria-live="polite"></p>
     </form>
   </div>
 
@@ -131,7 +149,7 @@
         }, 1000);
 
       } else {
-        message.style.color = "blue";
+        message.style.color = "#ff8080";
         message.textContent = "Invalid username or password.";
       }
     });
@@ -139,5 +157,3 @@
 
 </body>
 </html>
-
-	
